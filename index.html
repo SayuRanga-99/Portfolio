@@ -1,0 +1,1337 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Poornima - Web Developer | POS System Developer | UI Designer. Creating modern web applications, POS systems, dashboards and business websites.">
+  <meta name="keywords" content="Web Developer, POS System, Firebase, UI Designer, Portfolio, Sri Lanka">
+  <meta name="author" content="Poornima">
+  <meta property="og:title" content="RG Portfolio - Poornima">
+  <meta property="og:description" content="Web Developer | POS System Developer | UI Designer">
+  <meta property="og:type" content="website">
+  <title>RG Portfolio - SayuRanga | Web Developer</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Iconify Icons -->
+  <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            poppins: ['Poppins', 'sans-serif'],
+          },
+          colors: {
+            primary: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              200: '#bfdbfe',
+              300: '#93c5fd',
+              400: '#60a5fa',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              800: '#1e40af',
+              900: '#1e3a8a',
+            },
+            dark: {
+              950: '#060a14',
+              900: '#0a0f1c',
+              850: '#0d1224',
+              800: '#111827',
+              750: '#151c2e',
+              700: '#1a2332',
+              600: '#1e293b',
+              500: '#253349',
+              400: '#334155',
+              300: '#475569',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="font-poppins bg-dark-900 text-slate-300 overflow-x-hidden">
+
+  <!-- ============ NAVBAR ============ -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 md:h-20">
+        <!-- Logo -->
+        <a href="#home" class="flex items-center gap-2 group">
+          <div class="w-10 h-10 rounded-lg bg-primary-600 flex items-center justify-center font-bold text-white text-lg
+                      group-hover:bg-primary-500 transition-colors duration-300 shadow-lg shadow-primary-600/20">
+            RG
+          </div>
+          <span class="text-white font-semibold text-lg hidden sm:block">Portfolio</span>
+        </a>
+
+        <!-- Desktop Nav Links -->
+        <div class="hidden lg:flex items-center gap-1">
+          <a href="#home" class="nav-link active">Home</a>
+          <a href="#about" class="nav-link">About</a>
+          <a href="#skills" class="nav-link">Skills</a>
+          <a href="#projects" class="nav-link">Projects</a>
+          <a href="#services" class="nav-link">Services</a>
+          <a href="#portfolio" class="nav-link">Portfolio</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </div>
+
+        <!-- Download CV Button -->
+        <div class="hidden lg:block">
+          <a href="#" class="inline-flex items-center gap-2 px-5 py-2.5 bg-primary-600 text-white text-sm font-medium
+                     rounded-lg hover:bg-primary-500 transition-all duration-300 shadow-lg shadow-primary-600/20
+                     hover:shadow-primary-500/30 hover:-translate-y-0.5">
+            <span class="iconify" data-icon="lucide:download" data-width="16"></span>
+            Download CV
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="menuBtn" class="lg:hidden relative w-10 h-10 flex items-center justify-center text-white
+                    hover:text-primary-400 transition-colors" aria-label="Toggle menu">
+          <span class="iconify" data-icon="lucide:menu" data-width="24" id="menuIcon"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="lg:hidden hidden absolute top-full left-0 right-0 bg-dark-800/95 backdrop-blur-xl
+                border-t border-dark-500/50 shadow-2xl">
+      <div class="px-4 py-4 space-y-1">
+        <a href="#home" class="mobile-nav-link active" onclick="closeMobileMenu()">Home</a>
+        <a href="#about" class="mobile-nav-link" onclick="closeMobileMenu()">About</a>
+        <a href="#skills" class="mobile-nav-link" onclick="closeMobileMenu()">Skills</a>
+        <a href="#projects" class="mobile-nav-link" onclick="closeMobileMenu()">Projects</a>
+        <a href="#services" class="mobile-nav-link" onclick="closeMobileMenu()">Services</a>
+        <a href="#portfolio" class="mobile-nav-link" onclick="closeMobileMenu()">Portfolio</a>
+        <a href="#contact" class="mobile-nav-link" onclick="closeMobileMenu()">Contact</a>
+        <div class="pt-2">
+          <a href="#" class="flex items-center justify-center gap-2 px-5 py-3 bg-primary-600 text-white text-sm
+                     font-medium rounded-lg hover:bg-primary-500 transition-colors w-full">
+            <span class="iconify" data-icon="lucide:download" data-width="16"></span>
+            Download CV
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============ HERO SECTION ============ -->
+  <section id="home" class="relative min-h-screen flex items-center pt-20">
+    <!-- Background Effects -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+      <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary-600/5 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-primary-400/5 rounded-full blur-3xl"></div>
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px]
+                  bg-primary-600/3 rounded-full blur-3xl"></div>
+      <!-- Grid Pattern -->
+      <div class="absolute inset-0 opacity-[0.02]"
+           style="background-image: linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px),
+                  linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px);
+                  background-size: 60px 60px;"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <!-- Text Content -->
+        <div class="order-2 lg:order-1 text-center lg:text-left">
+          <!-- Badge -->
+          <div class="fade-up inline-flex items-center gap-2 px-4 py-2 bg-primary-600/10 border border-primary-600/20
+                      rounded-full mb-6">
+            <span class="w-2 h-2 bg-primary-500 rounded-full animate-pulse"></span>
+            <span class="text-primary-400 text-sm font-medium">Available for freelance work</span>
+          </div>
+
+          <h1 class="fade-up text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-4">
+            Hi, I'm<br>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-primary-600">SayuRanga</span>
+          </h1>
+
+          <p class="fade-up text-lg sm:text-xl text-primary-400 font-medium mb-6">
+            Web Developer | POS System Developer | UI Designer | Graphic Designer | freelancer
+          </p>
+
+          <p class="fade-up text-slate-400 text-base sm:text-lg leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0">
+            I create modern web applications, POS systems, Websites
+            that are fast, responsive and user-friendly.
+          </p>
+
+          <!-- Buttons -->
+          <div class="fade-up flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
+            <a href="#contact" class="group inline-flex items-center gap-2 px-8 py-4 bg-primary-600 text-white font-semibold
+                       rounded-xl hover:bg-primary-500 transition-all duration-300 shadow-xl shadow-primary-600/25
+                       hover:shadow-primary-500/35 hover:-translate-y-1 w-full sm:w-auto justify-center">
+              <span class="iconify" data-icon="lucide:send" data-width="18"></span>
+              Hire Me
+              <span class="iconify group-hover:translate-x-1 transition-transform duration-300"
+                    data-icon="lucide:arrow-right" data-width="18"></span>
+            </a>
+            <a href="#projects" class="group inline-flex items-center gap-2 px-8 py-4 border border-dark-400 text-white
+                       font-semibold rounded-xl hover:border-primary-500/50 hover:bg-primary-600/5
+                       transition-all duration-300 hover:-translate-y-1 w-full sm:w-auto justify-center">
+              <span class="iconify" data-icon="lucide:folder-open" data-width="18"></span>
+              View Projects
+            </a>
+          </div>
+
+          <!-- Stats -->
+          <div class="fade-up flex items-center gap-8 mt-10 justify-center lg:justify-start">
+            <div class="text-center">
+              <p class="text-2xl sm:text-3xl font-bold text-white">10+</p>
+              <p class="text-xs sm:text-sm text-slate-500 mt-1">Projects</p>
+            </div>
+            <div class="w-px h-10 bg-dark-400"></div>
+            <div class="text-center">
+              <p class="text-2xl sm:text-3xl font-bold text-white">5+</p>
+              <p class="text-xs sm:text-sm text-slate-500 mt-1">Services</p>
+            </div>
+            <div class="w-px h-10 bg-dark-400"></div>
+            <div class="text-center">
+              <p class="text-2xl sm:text-3xl font-bold text-white">100%</p>
+              <p class="text-xs sm:text-sm text-slate-500 mt-1">Dedication</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Profile Image -->
+        <div class="order-1 lg:order-2 flex justify-center fade-up">
+          <div class="relative">
+            <!-- Outer glow ring -->
+            <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-primary-600 to-primary-400
+                        blur-xl opacity-20 scale-110 animate-pulse-slow"></div>
+            <!-- Border ring -->
+            <div class="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full
+                        bg-gradient-to-tr from-primary-600 via-primary-500 to-primary-400 p-1
+                        shadow-2xl shadow-primary-600/20">
+              <div class="w-full h-full rounded-full bg-dark-800 flex items-center justify-center overflow-hidden">
+                <div class="text-center">
+                  <p class="text-7xl sm:text-8xl lg:text-9xl font-bold text-transparent bg-clip-text
+                            bg-gradient-to-br from-primary-400 to-primary-700">RG</p>
+                </div>
+              </div>
+            </div>
+            <!-- Floating badges -->
+            <div class="absolute -right-2 top-16 sm:top8 bg-dark-700 border border-dark-500 rounded-xl px-3 py-2
+                        shadow-xl float-animation-1">
+              <div class="flex items-center gap-2">
+                <span class="iconify text-primary-400" data-icon="lucide:code-2" data-width="18"></span>
+                <span class="text-white text-sm font-medium">Web Dev</span>
+              </div>
+            </div>
+            <div class="absolute -left-4 bottom-16 sm:bottom-15 bg-dark-700 border border-dark-500 rounded-xl px-3 py-2
+                        shadow-xl float-animation-2">
+              <div class="flex items-center gap-2">
+                <span class="iconify text-primary-400" data-icon="lucide:layout-dashboard" data-width="18"></span>
+                <span class="text-white text-sm font-medium">Graphics</span>
+              </div>
+            </div>
+            <div class="absolute -left-2 top-8 sm:top-8 bg-dark-700 border border-dark-500 rounded-xl px-3 py-2
+                        shadow-xl float-animation-1">
+              <div class="flex items-center gap-2">
+                <span class="iconify text-primary-400" data-icon="lucide:code-2" data-width="18"></span>
+                <span class="text-white text-sm font-medium">freelancer</span>
+              </div>
+            </div>
+            <div class="absolute right-4 -bottom-2 bg-dark-700 border border-dark-500 rounded-xl px-3 py-2
+                        shadow-xl float-animation-3">
+              <div class="flex items-center gap-2">
+                <span class="iconify text-primary-400" data-icon="lucide:palette" data-width="18"></span>
+                <span class="text-white text-sm font-medium">UI Design</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 fade-up">
+      <a href="#about" class="flex flex-col items-center gap-2 text-slate-500 hover:text-primary-400 transition-colors">
+        <span class="text-xs font-medium tracking-widest uppercase">Scroll</span>
+        <div class="w-6 h-10 border-2 border-slate-600 rounded-full flex justify-center pt-2">
+          <div class="w-1.5 h-1.5 bg-primary-400 rounded-full animate-bounce"></div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT SECTION ============ -->
+  <section id="about" class="py-20 sm:py-28 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Section Header -->
+      <div class="text-center mb-16 fade-up">
+        <span class="inline-block px-4 py-1.5 bg-primary-600/10 border border-primary-600/20 rounded-full
+                    text-primary-400 text-sm font-medium mb-4">About Me</span>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white">Get To Know Me</h2>
+        <div class="w-20 h-1 bg-gradient-to-r from-primary-600 to-primary-400 mx-auto mt-4 rounded-full"></div>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+        <!-- About Text -->
+        <div class="fade-up">
+          <h3 class="text-2xl sm:text-3xl font-bold text-white mb-6">
+            A passionate developer from <span class="text-primary-400">Sri Lanka</span>
+          </h3>
+          <div class="space-y-4 text-slate-400 leading-relaxed">
+            <p>
+              I'm sayuranga, a self-taught web developer and POS system specialist with a passion for
+              creating beautiful, functional digital experiences. My journey into coding started with
+              curiosity and has grown into a dedicated pursuit of building real-world solutions.
+            </p>
+            <p>
+              I specialize in building Point of Sale (POS) systems, modern responsive websites,
+              admin dashboards, and business tools. I work with technologies like HTML, CSS,
+              JavaScript, Firebase, and MongoDB to deliver complete solutions for my clients.
+            </p>
+            <p>
+              Whether it's a small business website or a complex POS system with inventory management,
+              I bring dedication, clean code, and attention to detail to every project I take on.
+            </p>
+          </div>
+
+          <!-- Info Cards -->
+          <div class="grid grid-cols-2 gap-4 mt-8">
+            <div class="bg-dark-700/50 border border-dark-500/50 rounded-xl p-4 hover:border-primary-600/30
+                        transition-colors duration-300">
+              <span class="iconify text-primary-400 mb-2" data-icon="lucide:map-pin" data-width="22"></span>
+              <p class="text-sm text-slate-500">Location</p>
+              <p class="text-white font-medium">Sri Lanka</p>
+            </div>
+            <div class="bg-dark-700/50 border border-dark-500/50 rounded-xl p-4 hover:border-primary-600/30
+                        transition-colors duration-300">
+              <span class="iconify text-primary-400 mb-2" data-icon="lucide:briefcase" data-width="22"></span>
+              <p class="text-sm text-slate-500">Experience</p>
+              <p class="text-white font-medium">Intermediate to Pro</p>
+            </div>
+            <div class="bg-dark-700/50 border border-dark-500/50 rounded-xl p-4 hover:border-primary-600/30
+                        transition-colors duration-300">
+              <span class="iconify text-primary-400 mb-2" data-icon="lucide:star" data-width="22"></span>
+              <p class="text-sm text-slate-500">Specialty</p>
+              <p class="text-white font-medium text-sm">Web Apps & Sites,  Cording </p>
+            </div>
+            <div class="bg-dark-700/50 border border-dark-500/50 rounded-xl p-4 hover:border-primary-600/30
+                        transition-colors duration-300">
+              <span class="iconify text-primary-400 mb-2" data-icon="lucide:database" data-width="22"></span>
+              <p class="text-sm text-slate-500">Tech Stack</p>
+              <p class="text-white font-medium text-sm">Firebase & MongoDB</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Timeline -->
+        <div class="fade-up">
+          <h3 class="text-xl font-bold text-white mb-8 flex items-center gap-2">
+            <span class="iconify text-primary-400" data-icon="lucide:road" data-width="22"></span>
+            My Journey
+          </h3>
+          <div class="relative">
+            <!-- Timeline line -->
+            <div class="absolute left-[15px] top-2 bottom-2 w-0.5 bg-gradient-to-b from-primary-600 via-primary-500
+                        to-dark-500"></div>
+
+            <!-- Timeline Items -->
+            <div class="space-y-8">
+              <div class="relative pl-12">
+                <div class="absolute left-0 top-1 w-8 h-8 rounded-full bg-dark-700 border-2 border-primary-500
+                            flex items-center justify-center">
+                  <div class="w-3 h-3 rounded-full bg-primary-500"></div>
+                </div>
+                <div class="bg-dark-700/50 border border-dark-500/50 rounded-xl p-5 hover:border-primary-600/30
+                            transition-colors duration-300">
+                  <span class="text-primary-400 text-sm font-medium">The Beginning</span>
+                  <h4 class="text-white font-semibold mt-1">Discovered Web Development</h4>
+                  <p class="text-slate-400 text-sm mt-2">Started learning HTML & CSS out of curiosity.
+                    Built first simple web pages and fell in love with creating things for the web.</p>
+                </div>
+              </div>
+
+              <div class="relative pl-12">
+                <div class="absolute left-0 top-1 w-8 h-8 rounded-full bg-dark-700 border-2 border-primary-500
+                            flex items-center justify-center">
+                  <div class="w-3 h-3 rounded-full bg-primary-500"></div>
+                </div>
+                <div class="bg-dark-700/50 border border-dark-500/50 rounded-xl p-5 hover:border-primary-600/30
+                            transition-colors duration-300">
+                  <span class="text-primary-400 text-sm font-medium">Leveling Up</span>
+                  <h4 class="text-white font-semibold mt-1">JavaScript & Firebase</h4>
+                  <p class="text-slate-400 text-sm mt-2">Dove deep into JavaScript, learned Firebase for
+                    real-time databases and authentication. Started building dynamic applications.</p>
+                </div>
+              </div>
+
+              <div class="relative pl-12">
+                <div class="absolute left-0 top-1 w-8 h-8 rounded-full bg-dark-700 border-2 border-primary-500
+                            flex items-center justify-center">
+                  <div class="w-3 h-3 rounded-full bg-primary-500"></div>
+                </div>
+                <div class="bg-dark-700/50 border border-dark-500/50 rounded-xl p-5 hover:border-primary-600/30
+                            transition-colors duration-300">
+                  <span class="text-primary-400 text-sm font-medium">Specialization</span>
+                  <h4 class="text-white font-semibold mt-1">POS System Development</h4>
+                  <p class="text-slate-400 text-sm mt-2">Found my niche in building POS systems for businesses.
+                    Learned inventory management, billing, and dashboard creation.</p>
+                </div>
+              </div>
+
+              <div class="relative pl-12">
+                <div class="absolute left-0 top-1 w-8 h-8 rounded-full bg-dark-700 border-2 border-primary-400
+                            flex items-center justify-center shadow-lg shadow-primary-500/20">
+                  <div class="w-3 h-3 rounded-full bg-primary-400 animate-pulse"></div>
+                </div>
+                <div class="bg-dark-700/50 border border-primary-600/30 rounded-xl p-5
+                            shadow-lg shadow-primary-600/5">
+                  <span class="text-primary-400 text-sm font-medium">Present</span>
+                  <h4 class="text-white font-semibold mt-1">Building & Growing</h4>
+                  <p class="text-slate-400 text-sm mt-2">Currently taking on freelance projects, expanding skills
+                    with Electron desktop apps, MongoDB, and modern UI frameworks.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SKILLS SECTION ============ -->
+  <section id="skills" class="py-20 sm:py-28 relative bg-dark-850">
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+      <div class="absolute top-0 right-0 w-96 h-96 bg-primary-600/3 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-0 left-0 w-80 h-80 bg-primary-400/3 rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <!-- Section Header -->
+      <div class="text-center mb-16 fade-up">
+        <span class="inline-block px-4 py-1.5 bg-primary-600/10 border border-primary-600/20 rounded-full
+                    text-primary-400 text-sm font-medium mb-4">My Skills</span>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white">Technical Skills</h2>
+        <div class="w-20 h-1 bg-gradient-to-r from-primary-600 to-primary-400 mx-auto mt-4 rounded-full"></div>
+      </div>
+
+      <!-- Skills Grid -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <!-- Skill 1 -->
+        <div class="fade-up skill-card bg-dark-700/40 border border-dark-500/50 rounded-2xl p-6
+                    hover:border-primary-600/30 transition-all duration-300 group">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-lg bg-orange-500/10 flex items-center justify-center
+                        group-hover:bg-orange-500/20 transition-colors">
+              <span class="iconify text-orange-400" data-icon="logos:html-5" data-width="22"></span>
+            </div>
+            <h4 class="text-white font-semibold text-sm">HTML / CSS / Tailwind</h4>
+          </div>
+          <div class="progress-bar-container">
+            <div class="progress-bar" data-width="90"></div>
+          </div>
+          <p class="text-right text-xs text-slate-500 mt-2">90%</p>
+        </div>
+
+        <!-- Skill 2 -->
+        <div class="fade-up skill-card bg-dark-700/40 border border-dark-500/50 rounded-2xl p-6
+                    hover:border-primary-600/30 transition-all duration-300 group">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-lg bg-yellow-500/10 flex items-center justify-center
+                        group-hover:bg-yellow-500/20 transition-colors">
+              <span class="iconify text-yellow-400" data-icon="logos:javascript" data-width="22"></span>
+            </div>
+            <h4 class="text-white font-semibold text-sm">JavaScript</h4>
+          </div>
+          <div class="progress-bar-container">
+            <div class="progress-bar" data-width="75"></div>
+          </div>
+          <p class="text-right text-xs text-slate-500 mt-2">75%</p>
+        </div>
+
+        <!-- Skill 3 -->
+        <div class="fade-up skill-card bg-dark-700/40 border border-dark-500/50 rounded-2xl p-6
+                    hover:border-primary-600/30 transition-all duration-300 group">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-lg bg-amber-500/10 flex items-center justify-center
+                        group-hover:bg-amber-500/20 transition-colors">
+              <span class="iconify text-amber-400" data-icon="logos:firebase" data-width="22"></span>
+            </div>
+            <h4 class="text-white font-semibold text-sm">Firebase</h4>
+          </div>
+          <div class="progress-bar-container">
+            <div class="progress-bar" data-width="80"></div>
+          </div>
+          <p class="text-right text-xs text-slate-500 mt-2">80%</p>
+        </div>
+
+        <!-- Skill 4 -->
+        <div class="fade-up skill-card bg-dark-700/40 border border-dark-500/50 rounded-2xl p-6
+                    hover:border-primary-600/30 transition-all duration-300 group">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-lg bg-slate-400/10 flex items-center justify-center
+                        group-hover:bg-slate-400/20 transition-colors">
+              <span class="iconify text-slate-300" data-icon="logos:github-icon" data-width="22"></span>
+            </div>
+            <h4 class="text-white font-semibold text-sm">Web Hosting</h4>
+          </div>
+          <div class="progress-bar-container">
+            <div class="progress-bar" data-width="85"></div>
+          </div>
+          <p class="text-right text-xs text-slate-500 mt-2">70%</p>
+        </div>
+
+        <!-- Skill 5 -->
+        <div class="fade-up skill-card bg-dark-700/40 border border-dark-500/50 rounded-2xl p-6
+                    hover:border-primary-600/30 transition-all duration-300 group">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-lg bg-primary-500/10 flex items-center justify-center
+                        group-hover:bg-primary-500/20 transition-colors">
+              <span class="iconify text-primary-400" data-icon="lucide:monitor-check" data-width="22"></span>
+            </div>
+            <h4 class="text-white font-semibold text-sm">POS System Dev</h4>
+          </div>
+          <div class="progress-bar-container">
+            <div class="progress-bar" data-width="85"></div>
+          </div>
+          <p class="text-right text-xs text-slate-500 mt-2">90%</p>
+        </div>
+
+        <!-- Skill 6 -->
+        <div class="fade-up skill-card bg-dark-700/40 border border-dark-500/50 rounded-2xl p-6
+                    hover:border-primary-600/30 transition-all duration-300 group">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-lg bg-pink-500/10 flex items-center justify-center
+                        group-hover:bg-pink-500/20 transition-colors">
+              <span class="iconify text-pink-400" data-icon="lucide:figma" data-width="22"></span>
+            </div>
+            <h4 class="text-white font-semibold text-sm">UI Design</h4>
+          </div>
+          <div class="progress-bar-container">
+            <div class="progress-bar" data-width="80"></div>
+          </div>
+          <p class="text-right text-xs text-slate-500 mt-2">80%</p>
+        </div>
+
+        <!-- Skill 7 -->
+        <div class="fade-up skill-card bg-dark-700/40 border border-dark-500/50 rounded-2xl p-6
+                    hover:border-primary-600/30 transition-all duration-300 group">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-lg bg-green-500/10 flex items-center justify-center
+                        group-hover:bg-green-500/20 transition-colors">
+              <span class="iconify text-green-400" data-icon="logos:mongodb-icon" data-width="22"></span>
+            </div>
+            <h4 class="text-white font-semibold text-sm">MongoDB Basics</h4>
+          </div>
+          <div class="progress-bar-container">
+            <div class="progress-bar" data-width="55"></div>
+          </div>
+          <p class="text-right text-xs text-slate-500 mt-2">55%</p>
+        </div>
+
+        <!-- Skill 8 -->
+        <div class="fade-up skill-card bg-dark-700/40 border border-dark-500/50 rounded-2xl p-6
+                    hover:border-primary-600/30 transition-all duration-300 group">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-lg bg-blue-400/10 flex items-center justify-center
+                        group-hover:bg-blue-400/20 transition-colors">
+              <span class="iconify text-blue-300" data-icon="logos:electron" data-width="22"></span>
+            </div>
+            <h4 class="text-white font-semibold text-sm">Electron Desktop App</h4>
+          </div>
+          <div class="progress-bar-container">
+            <div class="progress-bar" data-width="45"></div>
+          </div>
+          <p class="text-right text-xs text-slate-500 mt-2">60%</p>
+        </div>
+
+        <!-- Skill 9 -->
+        <div class="fade-up skill-card bg-dark-700/40 border border-dark-500/50 rounded-2xl p-6
+                    hover:border-primary-600/30 transition-all duration-300 group">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-lg bg-pink-500/10 flex items-center justify-center
+                        group-hover:bg-pink-500/20 transition-colors">
+              <span class="iconify text-pink-400" data-icon="lucide:figma" data-width="22"></span>
+            </div>
+            <h4 class="text-white font-semibold text-sm">Graphic Design</h4>
+          </div>
+          <div class="progress-bar-container">
+            <div class="progress-bar" data-width="80"></div>
+          </div>
+          <p class="text-right text-xs text-slate-500 mt-2">80%</p>
+        </div>
+
+        <!-- Skill 10 -->
+        <div class="fade-up skill-card bg-dark-700/40 border border-dark-500/50 rounded-2xl p-6
+                    hover:border-primary-600/30 transition-all duration-300 group">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-lg bg-pink-500/10 flex items-center justify-center
+                        group-hover:bg-pink-500/20 transition-colors">
+              <span class="iconify text-pink-400" data-icon="lucide:figma" data-width="22"></span>
+            </div>
+            <h4 class="text-white font-semibold text-sm">Ai Content</h4>
+          </div>
+          <div class="progress-bar-container">
+            <div class="progress-bar" data-width="80"></div>
+          </div>
+          <p class="text-right text-xs text-slate-500 mt-2">85%</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SERVICES SECTION ============ -->
+  <section id="services" class="py-20 sm:py-28 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Section Header -->
+      <div class="text-center mb-16 fade-up">
+        <span class="inline-block px-4 py-1.5 bg-primary-600/10 border border-primary-600/20 rounded-full
+                    text-primary-400 text-sm font-medium mb-4">What I Offer</span>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white">My Services</h2>
+        <div class="w-20 h-1 bg-gradient-to-r from-primary-600 to-primary-400 mx-auto mt-4 rounded-full"></div>
+      </div>
+
+      <!-- Services Grid -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Service 1 -->
+        <div class="fade-up group bg-dark-700/30 border border-dark-500/50 rounded-2xl p-7
+                    hover:border-primary-600/30 hover:bg-dark-700/50 transition-all duration-300
+                    hover:-translate-y-1 hover:shadow-xl hover:shadow-primary-600/5">
+          <div class="w-14 h-14 rounded-xl bg-primary-600/10 flex items-center justify-center mb-5
+                      group-hover:bg-primary-600/20 transition-colors duration-300">
+            <span class="iconify text-primary-400 group-hover:scale-110 transition-transform duration-300"
+                  data-icon="lucide:monitor-check" data-width="28"></span>
+          </div>
+          <h3 class="text-white font-bold text-lg mb-3">POS System Development</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">Complete point of sale systems with billing,
+            inventory management, sales reports, and receipt printing for retail businesses.</p>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="fade-up group bg-dark-700/30 border border-dark-500/50 rounded-2xl p-7
+                    hover:border-primary-600/30 hover:bg-dark-700/50 transition-all duration-300
+                    hover:-translate-y-1 hover:shadow-xl hover:shadow-primary-600/5">
+          <div class="w-14 h-14 rounded-xl bg-primary-600/10 flex items-center justify-center mb-5
+                      group-hover:bg-primary-600/20 transition-colors duration-300">
+            <span class="iconify text-primary-400 group-hover:scale-110 transition-transform duration-300"
+                  data-icon="lucide:globe" data-width="28"></span>
+          </div>
+          <h3 class="text-white font-bold text-lg mb-3">Website Development</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">Modern, responsive websites for businesses,
+            portfolios, and personal brands using the latest web technologies.</p>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="fade-up group bg-dark-700/30 border border-dark-500/50 rounded-2xl p-7
+                    hover:border-primary-600/30 hover:bg-dark-700/50 transition-all duration-300
+                    hover:-translate-y-1 hover:shadow-xl hover:shadow-primary-600/5">
+          <div class="w-14 h-14 rounded-xl bg-primary-600/10 flex items-center justify-center mb-5
+                      group-hover:bg-primary-600/20 transition-colors duration-300">
+            <span class="iconify text-primary-400 group-hover:scale-110 transition-transform duration-300"
+                  data-icon="lucide:layout-dashboard" data-width="28"></span>
+          </div>
+          <h3 class="text-white font-bold text-lg mb-3">Dashboard & Admin Panels</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">Clean, data-rich admin dashboards with
+            charts, tables, user management, and analytics views.</p>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="fade-up group bg-dark-700/30 border border-dark-500/50 rounded-2xl p-7
+                    hover:border-primary-600/30 hover:bg-dark-700/50 transition-all duration-300
+                    hover:-translate-y-1 hover:shadow-xl hover:shadow-primary-600/5">
+          <div class="w-14 h-14 rounded-xl bg-primary-600/10 flex items-center justify-center mb-5
+                      group-hover:bg-primary-600/20 transition-colors duration-300">
+            <span class="iconify text-primary-400 group-hover:scale-110 transition-transform duration-300"
+                  data-icon="lucide:cloud-upload" data-width="28"></span>
+          </div>
+          <h3 class="text-white font-bold text-lg mb-3">Hosting Setup</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">Deploy your website on GitHub Pages, Vercel,
+            or other platforms with proper configuration and custom domains.</p>
+        </div>
+
+        <!-- Service 5 -->
+        <div class="fade-up group bg-dark-700/30 border border-dark-500/50 rounded-2xl p-7
+                    hover:border-primary-600/30 hover:bg-dark-700/50 transition-all duration-300
+                    hover:-translate-y-1 hover:shadow-xl hover:shadow-primary-600/5">
+          <div class="w-14 h-14 rounded-xl bg-primary-600/10 flex items-center justify-center mb-5
+                      group-hover:bg-primary-600/20 transition-colors duration-300">
+            <span class="iconify text-primary-400 group-hover:scale-110 transition-transform duration-300"
+                  data-icon="lucide:flame" data-width="28"></span>
+          </div>
+          <h3 class="text-white font-bold text-lg mb-3">Firebase Integration</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">Real-time database setup, user authentication,
+            cloud storage, and Firebase hosting for dynamic web apps.</p>
+        </div>
+
+        <!-- Service 6 -->
+        <div class="fade-up group bg-dark-700/30 border border-dark-500/50 rounded-2xl p-7
+                    hover:border-primary-600/30 hover:bg-dark-700/50 transition-all duration-300
+                    hover:-translate-y-1 hover:shadow-xl hover:shadow-primary-600/5">
+          <div class="w-14 h-14 rounded-xl bg-primary-600/10 flex items-center justify-center mb-5
+                      group-hover:bg-primary-600/20 transition-colors duration-300">
+            <span class="iconify text-primary-400 group-hover:scale-110 transition-transform duration-300"
+                  data-icon="lucide:app-window" data-width="28"></span>
+          </div>
+          <h3 class="text-white font-bold text-lg mb-3">Desktop App Creation</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">Convert web applications into desktop apps
+            using Electron for offline use with native-like experience.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROJECTS SECTION ============ -->
+  <section id="projects" class="py-20 sm:py-28 relative bg-dark-850">
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px]
+                  bg-primary-600/3 rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <!-- Section Header -->
+      <div class="text-center mb-16 fade-up">
+        <span class="inline-block px-4 py-1.5 bg-primary-600/10 border border-primary-600/20 rounded-full
+                    text-primary-400 text-sm font-medium mb-4">My Work</span>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white">Featured Projects</h2>
+        <div class="w-20 h-1 bg-gradient-to-r from-primary-600 to-primary-400 mx-auto mt-4 rounded-full"></div>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Project 1 -->
+        <div class="fade-up group bg-dark-700/30 border border-dark-500/50 rounded-2xl overflow-hidden
+                    hover:border-primary-600/30 transition-all duration-300 hover:-translate-y-1
+                    hover:shadow-xl hover:shadow-primary-600/5">
+          <div class="relative h-48 bg-gradient-to-br from-primary-900/50 to-dark-700 flex items-center justify-center
+                      group-hover:from-primary-800/50 transition-all duration-300 overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-t from-dark-700 to-transparent opacity-50"></div>
+            <span class="iconify text-primary-500/40 group-hover:text-primary-500/60 transition-colors duration-300"
+                  data-icon="lucide:monitor-check" data-width="64"></span>
+          </div>
+          <div class="p-6">
+            <h3 class="text-white font-bold text-lg mb-2 group-hover:text-primary-400 transition-colors">RG POS System</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-4">Complete POS system with product management,
+              billing, inventory tracking, and sales reporting.</p>
+            <div class="flex flex-wrap gap-2 mb-5">
+              <span class="px-2.5 py-1 bg-primary-600/10 text-primary-400 text-xs font-medium rounded-md">HTML/CSS</span>
+              <span class="px-2.5 py-1 bg-primary-600/10 text-primary-400 text-xs font-medium rounded-md">JavaScript</span>
+              <span class="px-2.5 py-1 bg-primary-600/10 text-primary-400 text-xs font-medium rounded-md">Firebase</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <a href="#" class="inline-flex items-center gap-1.5 px-4 py-2 bg-primary-600 text-white text-sm font-medium
+                         rounded-lg hover:bg-primary-500 transition-colors">
+                <span class="iconify" data-icon="lucide:external-link" data-width="14"></span> Live Demo
+              </a>
+              <a href="#" class="inline-flex items-center gap-1.5 px-4 py-2 border border-dark-400 text-slate-300
+                         text-sm font-medium rounded-lg hover:border-primary-500/50 hover:text-white transition-colors">
+                <span class="iconify" data-icon="lucide:github" data-width="14"></span> GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="fade-up group bg-dark-700/30 border border-dark-500/50 rounded-2xl overflow-hidden
+                    hover:border-primary-600/30 transition-all duration-300 hover:-translate-y-1
+                    hover:shadow-xl hover:shadow-primary-600/5">
+          <div class="relative h-48 bg-gradient-to-br from-red-900/30 to-dark-700 flex items-center justify-center
+                      group-hover:from-red-800/30 transition-all duration-300 overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-t from-dark-700 to-transparent opacity-50"></div>
+            <span class="iconify text-red-500/40 group-hover:text-red-500/60 transition-colors duration-300"
+                  data-icon="lucide:download" data-width="64"></span>
+          </div>
+          <div class="p-6">
+            <h3 class="text-white font-bold text-lg mb-2 group-hover:text-primary-400 transition-colors">DownYT Downloader</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-4">YouTube video downloader website with
+              clean UI, multiple format support, and fast processing.</p>
+            <div class="flex flex-wrap gap-2 mb-5">
+              <span class="px-2.5 py-1 bg-primary-600/10 text-primary-400 text-xs font-medium rounded-md">HTML/CSS</span>
+              <span class="px-2.5 py-1 bg-primary-600/10 text-primary-400 text-xs font-medium rounded-md">JavaScript</span>
+              <span class="px-2.5 py-1 bg-primary-600/10 text-primary-400 text-xs font-medium rounded-md">API</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <a href="#" class="inline-flex items-center gap-1.5 px-4 py-2 bg-primary-600 text-white text-sm font-medium
+                         rounded-lg hover:bg-primary-500 transition-colors">
+                <span class="iconify" data-icon="lucide:external-link" data-width="14"></span> Live Demo
+              </a>
+              <a href="#" class="inline-flex items-center gap-1.5 px-4 py-2 border border-dark-400 text-slate-300
+                         text-sm font-medium rounded-lg hover:border-primary-500/50 hover:text-white transition-colors">
+                <span class="iconify" data-icon="lucide:github" data-width="14"></span> GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="fade-up group bg-dark-700/30 border border-dark-500/50 rounded-2xl overflow-hidden
+                    hover:border-primary-600/30 transition-all duration-300 hover:-translate-y-1
+                    hover:shadow-xl hover:shadow-primary-600/5">
+          <div class="relative h-48 bg-gradient-to-br from-amber-900/30 to-dark-700 flex items-center justify-center
+                      group-hover:from-amber-800/30 transition-all duration-300 overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-t from-dark-700 to-transparent opacity-50"></div>
+            <span class="iconify text-amber-500/40 group-hover:text-amber-500/60 transition-colors duration-300"
+                  data-icon="lucide:flame" data-width="64"></span>
+          </div>
+          <div class="p-6">
+            <h3 class="text-white font-bold text-lg mb-2 group-hover:text-primary-400 transition-colors">Firebase Connected POS</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-4">Cloud-connected POS system using Firebase
+              real-time database with multi-device sync support.</p>
+            <div class="flex flex-wrap gap-2 mb-5">
+              <span class="px-2.5 py-1 bg-primary-600/10 text-primary-400 text-xs font-medium rounded-md">Firebase</span>
+              <span class="px-2.5 py-1 bg-primary-600/10 text-primary-400 text-xs font-medium rounded-md">JavaScript</span>
+              <span class="px-2.5 py-1 bg-primary-600/10 text-primary-400 text-xs font-medium rounded-md">Tailwind</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <a href="#" class="inline-flex items-center gap-1.5 px-4 py-2 bg-primary-600 text-white text-sm font-medium
+                         rounded-lg hover:bg-primary-500 transition-colors">
+                <span class="iconify" data-icon="lucide:external-link" data-width="14"></span> Live Demo
+              </a>
+              <a href="#" class="inline-flex items-center gap-1.5 px-4 py-2 border border-dark-400 text-slate-300
+                         text-sm font-medium rounded-lg hover:border-primary-500/50 hover:text-white transition-colors">
+                <span class="iconify" data-icon="lucide:github" data-width="14"></span> GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="fade-up group bg-dark-700/30 border border-dark-500/50 rounded-2xl overflow-hidden
+                    hover:border-primary-600/30 transition-all duration-300 hover:-translate-y-1
+                    hover:shadow-xl hover:shadow-primary-600/5">
+          <div class="relative h-48 bg-gradient-to-br from-emerald-900/30 to-dark-700 flex items-center justify-center
+                      group-hover:from-emerald-800/30 transition-all duration-300 overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-t from-dark-700 to-transparent opacity-50"></div>
+            <span class="iconify text-emerald-500/40 group-hover:text-emerald-500/60 transition-colors duration-300"
+                  data-icon="lucide:layout-dashboard" data-width="64"></span>
+          </div>
+          <div class="p-6">
+            <h3 class="text-white font-bold text-lg mb-2 group-hover:text-primary-400 transition-colors">Admin Dashboard UI</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-4">Modern admin dashboard with charts,
+              data tables, user management, and clean analytics interface.</p>
+            <div class="flex flex-wrap gap-2 mb-5">
+              <span class="px-2.5 py-1 bg-primary-600/10 text-primary-400 text-xs font-medium rounded-md">Tailwind</span>
+              <span class="px-2.5 py-1 bg-primary-600/10 text-primary-400 text-xs font-medium rounded-md">Chart.js</span>
+              <span class="px-2.5 py-1 bg-primary-600/10 text-primary-400 text-xs font-medium rounded-md">CSS</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <a href="#" class="inline-flex items-center gap-1.5 px-4 py-2 bg-primary-600 text-white text-sm font-medium
+                         rounded-lg hover:bg-primary-500 transition-colors">
+                <span class="iconify" data-icon="lucide:external-link" data-width="14"></span> Live Demo
+              </a>
+              <a href="#" class="inline-flex items-center gap-1.5 px-4 py-2 border border-dark-400 text-slate-300
+                         text-sm font-medium rounded-lg hover:border-primary-500/50 hover:text-white transition-colors">
+                <span class="iconify" data-icon="lucide:github" data-width="14"></span> GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 5 -->
+        <div class="fade-up group bg-dark-700/30 border border-dark-500/50 rounded-2xl overflow-hidden
+                    hover:border-primary-600/30 transition-all duration-300 hover:-translate-y-1
+                    hover:shadow-xl hover:shadow-primary-600/5 md:col-span-2 lg:col-span-2">
+          <div class="grid md:grid-cols-2 h-full">
+            <div class="relative h-48 md:h-full bg-gradient-to-br from-violet-900/30 to-dark-700 flex items-center justify-center
+                        group-hover:from-violet-800/30 transition-all duration-300 overflow-hidden min-h-[192px]">
+              <div class="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-dark-700 to-transparent opacity-50"></div>
+              <span class="iconify text-violet-500/40 group-hover:text-violet-500/60 transition-colors duration-300"
+                    data-icon="lucide:video" data-width="64"></span>
+            </div>
+            <div class="p-6 flex flex-col justify-center">
+              <h3 class="text-white font-bold text-lg mb-2 group-hover:text-primary-400 transition-colors">
+                Video Downloader UI Template
+              </h3>
+              <p class="text-slate-400 text-sm leading-relaxed mb-4">Beautiful, reusable video downloader UI template
+                with dark mode, responsive design, and multiple platform support layout.</p>
+              <div class="flex flex-wrap gap-2 mb-5">
+                <span class="px-2.5 py-1 bg-primary-600/10 text-primary-400 text-xs font-medium rounded-md">HTML/CSS</span>
+                <span class="px-2.5 py-1 bg-primary-600/10 text-primary-400 text-xs font-medium rounded-md">Tailwind</span>
+                <span class="px-2.5 py-1 bg-primary-600/10 text-primary-400 text-xs font-medium rounded-md">Responsive</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <a href="#" class="inline-flex items-center gap-1.5 px-4 py-2 bg-primary-600 text-white text-sm font-medium
+                           rounded-lg hover:bg-primary-500 transition-colors">
+                  <span class="iconify" data-icon="lucide:external-link" data-width="14"></span> Live Demo
+                </a>
+                <a href="#" class="inline-flex items-center gap-1.5 px-4 py-2 border border-dark-400 text-slate-300
+                           text-sm font-medium rounded-lg hover:border-primary-500/50 hover:text-white transition-colors">
+                  <span class="iconify" data-icon="lucide:github" data-width="14"></span> GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PORTFOLIO GALLERY SECTION ============ -->
+  <section id="portfolio" class="py-20 sm:py-28 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Section Header -->
+      <div class="text-center mb-12 fade-up">
+        <span class="inline-block px-4 py-1.5 bg-primary-600/10 border border-primary-600/20 rounded-full
+                    text-primary-400 text-sm font-medium mb-4">Gallery</span>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white">Portfolio Gallery</h2>
+        <div class="w-20 h-1 bg-gradient-to-r from-primary-600 to-primary-400 mx-auto mt-4 rounded-full"></div>
+      </div>
+
+      <!-- Filter Buttons -->
+      <div class="flex flex-wrap items-center justify-center gap-3 mb-12 fade-up">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="pos">POS</button>
+        <button class="filter-btn" data-filter="websites">Websites</button>
+        <button class="filter-btn" data-filter="dashboards">Dashboards</button>
+        <button class="filter-btn" data-filter="ui">UI Designs</button>
+      </div>
+
+      <!-- Gallery Grid -->
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4" id="galleryGrid">
+        <!-- Item 1 -->
+        <div class="gallery-item fade-up" data-category="pos">
+          <div class="gallery-card group relative aspect-square rounded-xl overflow-hidden cursor-pointer">
+            <div class="absolute inset-0 bg-gradient-to-br from-primary-800/40 to-dark-800 flex items-center justify-center">
+              <span class="iconify text-primary-500/30" data-icon="lucide:monitor-check" data-width="40"></span>
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-dark-900/90 via-dark-900/20 to-transparent
+                        opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+              <div>
+                <h4 class="text-white font-semibold text-sm">POS Dashboard</h4>
+                <p class="text-primary-400 text-xs">POS System</p>
+              </div>
+            </div>
+            <div class="absolute inset-0 group-hover:scale-110 transition-transform duration-500"></div>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="gallery-item fade-up" data-category="websites">
+          <div class="gallery-card group relative aspect-square rounded-xl overflow-hidden cursor-pointer">
+            <div class="absolute inset-0 bg-gradient-to-br from-red-800/40 to-dark-800 flex items-center justify-center">
+              <span class="iconify text-red-500/30" data-icon="lucide:download" data-width="40"></span>
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-dark-900/90 via-dark-900/20 to-transparent
+                        opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+              <div>
+                <h4 class="text-white font-semibold text-sm">DownYT Home</h4>
+                <p class="text-primary-400 text-xs">Website</p>
+              </div>
+            </div>
+            <div class="absolute inset-0 group-hover:scale-110 transition-transform duration-500"></div>
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="gallery-item fade-up" data-category="dashboards">
+          <div class="gallery-card group relative aspect-square rounded-xl overflow-hidden cursor-pointer">
+            <div class="absolute inset-0 bg-gradient-to-br from-emerald-800/40 to-dark-800 flex items-center justify-center">
+              <span class="iconify text-emerald-500/30" data-icon="lucide:bar-chart-3" data-width="40"></span>
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-dark-900/90 via-dark-900/20 to-transparent
+                        opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+              <div>
+                <h4 class="text-white font-semibold text-sm">Analytics View</h4>
+                <p class="text-primary-400 text-xs">Dashboard</p>
+              </div>
+            </div>
+            <div class="absolute inset-0 group-hover:scale-110 transition-transform duration-500"></div>
+          </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="gallery-item fade-up" data-category="ui">
+          <div class="gallery-card group relative aspect-square rounded-xl overflow-hidden cursor-pointer">
+            <div class="absolute inset-0 bg-gradient-to-br from-violet-800/40 to-dark-800 flex items-center justify-center">
+              <span class="iconify text-violet-500/30" data-icon="lucide:palette" data-width="40"></span>
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-dark-900/90 via-dark-900/20 to-transparent
+                        opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+              <div>
+                <h4 class="text-white font-semibold text-sm">Dark UI Kit</h4>
+                <p class="text-primary-400 text-xs">UI Design</p>
+              </div>
+            </div>
+            <div class="absolute inset-0 group-hover:scale-110 transition-transform duration-500"></div>
+          </div>
+        </div>
+
+        <!-- Item 5 -->
+        <div class="gallery-item fade-up" data-category="pos">
+          <div class="gallery-card group relative aspect-square rounded-xl overflow-hidden cursor-pointer">
+            <div class="absolute inset-0 bg-gradient-to-br from-amber-800/40 to-dark-800 flex items-center justify-center">
+              <span class="iconify text-amber-500/30" data-icon="lucide:receipt" data-width="40"></span>
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-dark-900/90 via-dark-900/20 to-transparent
+                        opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+              <div>
+                <h4 class="text-white font-semibold text-sm">Receipt View</h4>
+                <p class="text-primary-400 text-xs">POS System</p>
+              </div>
+            </div>
+            <div class="absolute inset-0 group-hover:scale-110 transition-transform duration-500"></div>
+          </div>
+        </div>
+
+        <!-- Item 6 -->
+        <div class="gallery-item fade-up" data-category="websites">
+          <div class="gallery-card group relative aspect-square rounded-xl overflow-hidden cursor-pointer">
+            <div class="absolute inset-0 bg-gradient-to-br from-cyan-800/40 to-dark-800 flex items-center justify-center">
+              <span class="iconify text-cyan-500/30" data-icon="lucide:landing-page" data-width="40"></span>
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-dark-900/90 via-dark-900/20 to-transparent
+                        opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+              <div>
+                <h4 class="text-white font-semibold text-sm">Landing Page</h4>
+                <p class="text-primary-400 text-xs">Website</p>
+              </div>
+            </div>
+            <div class="absolute inset-0 group-hover:scale-110 transition-transform duration-500"></div>
+          </div>
+        </div>
+
+        <!-- Item 7 -->
+        <div class="gallery-item fade-up" data-category="dashboards">
+          <div class="gallery-card group relative aspect-square rounded-xl overflow-hidden cursor-pointer">
+            <div class="absolute inset-0 bg-gradient-to-br from-pink-800/40 to-dark-800 flex items-center justify-center">
+              <span class="iconify text-pink-500/30" data-icon="lucide:users" data-width="40"></span>
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-dark-900/90 via-dark-900/20 to-transparent
+                        opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+              <div>
+                <h4 class="text-white font-semibold text-sm">User Management</h4>
+                <p class="text-primary-400 text-xs">Dashboard</p>
+              </div>
+            </div>
+            <div class="absolute inset-0 group-hover:scale-110 transition-transform duration-500"></div>
+          </div>
+        </div>
+
+        <!-- Item 8 -->
+        <div class="gallery-item fade-up" data-category="ui">
+          <div class="gallery-card group relative aspect-square rounded-xl overflow-hidden cursor-pointer">
+            <div class="absolute inset-0 bg-gradient-to-br from-orange-800/40 to-dark-800 flex items-center justify-center">
+              <span class="iconify text-orange-500/30" data-icon="lucide:smartphone" data-width="40"></span>
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-dark-900/90 via-dark-900/20 to-transparent
+                        opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+              <div>
+                <h4 class="text-white font-semibold text-sm">Mobile UI</h4>
+                <p class="text-primary-400 text-xs">UI Design</p>
+              </div>
+            </div>
+            <div class="absolute inset-0 group-hover:scale-110 transition-transform duration-500"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIALS SECTION ============ -->
+  <section id="testimonials" class="py-20 sm:py-28 relative bg-dark-850">
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+      <div class="absolute bottom-0 right-0 w-96 h-96 bg-primary-600/3 rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <!-- Section Header -->
+      <div class="text-center mb-16 fade-up">
+        <span class="inline-block px-4 py-1.5 bg-primary-600/10 border border-primary-600/20 rounded-full
+                    text-primary-400 text-sm font-medium mb-4">Testimonials</span>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white">What Clients Say</h2>
+        <div class="w-20 h-1 bg-gradient-to-r from-primary-600 to-primary-400 mx-auto mt-4 rounded-full"></div>
+      </div>
+
+      <!-- Testimonials Grid -->
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Testimonial 1 -->
+        <div class="fade-up bg-dark-700/30 border border-dark-500/50 rounded-2xl p-7
+                    hover:border-primary-600/20 transition-all duration-300">
+          <div class="flex items-center gap-1 mb-4">
+            <span class="iconify text-yellow-400" data-icon="lucide:star" data-width="16"></span>
+            <span class="iconify text-yellow-400" data-icon="lucide:star" data-width="16"></span>
+            <span class="iconify text-yellow-400" data-icon="lucide:star" data-width="16"></span>
+            <span class="iconify text-yellow-400" data-icon="lucide:star" data-width="16"></span>
+            <span class="iconify text-yellow-400" data-icon="lucide:star" data-width="16"></span>
+          </div>
+          <p class="text-slate-400 text-sm leading-relaxed mb-6 italic">
+            "RG built an amazing POS system for my retail shop. It's easy to use, fast,
+            and the inventory tracking feature saves me hours every week. Highly recommend!"
+          </p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-primary-500 to-primary-700
+                        flex items-center justify-center text-white font-semibold text-sm">NK</div>
+            <div>
+              <p class="text-white font-medium text-sm">Nimal Kumar</p>
+              <p class="text-slate-500 text-xs">Shop Owner, Colombo</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="fade-up bg-dark-700/30 border border-dark-500/50 rounded-2xl p-7
+                    hover:border-primary-600/20 transition-all duration-300">
+          <div class="flex items-center gap-1 mb-4">
+            <span class="iconify text-yellow-400" data-icon="lucide:star" data-width="16"></span>
+            <span class="iconify text-yellow-400" data-icon="lucide:star" data-width="16"></span>
+            <span class="iconify text-yellow-400" data-icon="lucide:star" data-width="16"></span>
+            <span class="iconify text-yellow-400" data-icon="lucide:star" data-width="16"></span>
+            <span class="iconify text-yellow-400" data-icon="lucide:star" data-width="16"></span>
+          </div>
+          <p class="text-slate-400 text-sm leading-relaxed mb-6 italic">
+            "The website RG created for my business looks professional and modern.
+            She understood exactly what I needed and delivered on time. Great communication!"
+          </p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-500 to-emerald-700
+                        flex items-center justify-center text-white font-semibold text-sm">SF</div>
+            <div>
+              <p class="text-white font-medium text-sm">Sanduni Fernando</p>
+              <p class="text-slate-500 text-xs">Business Owner, Kandy</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="fade-up bg-dark-700/30 border border-dark-500/50 rounded-2xl p-7
+                    hover:border-primary-600/20 transition-all duration-300">
+          <div class="flex items-center gap-1 mb-4">
+            <span class="iconify text-yellow-400" data-icon="lucide:star" data-width="16"></span>
+            <span class="iconify text-yellow-400" data-icon="lucide:star" data-width="16"></span>
+            <span class="iconify text-yellow-400" data-icon="lucide:star" data-width="16"></span>
+            <span class="iconify text-yellow-400" data-icon="lucide:star" data-width="16"></span>
+            <span class="iconify text-yellow-400" data-icon="lucide:star" data-width="16"></span>
+          </div>
+          <p class="text-slate-400 text-sm leading-relaxed mb-6 italic">
+            "Very talented developer! The admin dashboard she built has beautiful charts and
+            is super responsive. She's quick to learn new things and always delivers quality work."
+          </p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-violet-500 to-violet-700
+                        flex items-center justify-center text-white font-semibold text-sm">RP</div>
+            <div>
+              <p class="text-white font-medium text-sm">Rajith Perera</p>
+              <p class="text-slate-500 text-xs">Startup Founder, Galle</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT SECTION ============ -->
+  <section id="contact" class="py-20 sm:py-28 relative">
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+      <div class="absolute top-1/2 left-0 w-96 h-96 bg-primary-600/3 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-0 right-1/4 w-80 h-80 bg-primary-400/3 rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <!-- Section Header -->
+      <div class="text-center mb-16 fade-up">
+        <span class="inline-block px-4 py-1.5 bg-primary-600/10 border border-primary-600/20 rounded-full
+                    text-primary-400 text-sm font-medium mb-4">Get In Touch</span>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white">Contact Me</h2>
+        <div class="w-20 h-1 bg-gradient-to-r from-primary-600 to-primary-400 mx-auto mt-4 rounded-full"></div>
+      </div>
+
+      <div class="grid lg:grid-cols-5 gap-10 lg:gap-12">
+        <!-- Contact Info -->
+        <div class="lg:col-span-2 space-y-6 fade-up">
+          <h3 class="text-xl font-bold text-white mb-2">Let's work together</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Have a project in mind or need a POS system for your business?
+            Feel free to reach out. I'm always open to discussing new projects and ideas.
+          </p>
+
+          <!-- Contact Cards -->
+          <div class="space-y-4 mt-6">
+            <div class="flex items-center gap-4 bg-dark-700/40 border border-dark-500/50 rounded-xl p-4
+                        hover:border-primary-600/30 transition-colors duration-300">
+              <div class="w-12 h-12 rounded-lg bg-primary-600/10 flex items-center justify-center shrink-0">
+                <span class="iconify text-primary-400" data-icon="lucide:mail" data-width="20"></span>
+              </div>
+              <div>
+                <p class="text-slate-500 text-xs">Email</p>
+                <p class="text-white font-medium text-sm">poornima@example.com</p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-4 bg-dark-700/40 border border-dark-500/50 rounded-xl p-4
+                        hover:border-primary-600/30 transition-colors duration-300">
+              <div class="w-12 h-12 rounded-lg bg-primary-600/10 flex items-center justify-center shrink-0">
+                <span class="iconify text-primary-400" data-icon="lucide:phone" data-width="20"></span>
+              </div>
+              <div>
+                <p class="text-slate-500 text-xs">Phone</p>
+                <p class="text-white font-medium text-sm">+94 70 12 22 194</p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-4 bg-dark-700/40 border border-dark-500/50 rounded-xl p-4
+                        hover:border-primary-600/30 transition-colors duration-300">
+              <div class="w-12 h-12 rounded-lg bg-primary-600/10 flex items-center justify-center shrink-0">
+                <span class="iconify text-primary-400" data-icon="lucide:map-pin" data-width="20"></span>
+              </div>
+              <div>
+                <p class="text-slate-500 text-xs">Location</p>
+                <p class="text-white font-medium text-sm">Sri Lanka</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- WhatsApp Button -->
+          <a href="https://wa.me/94701222194" target="_blank"
+             class="inline-flex items-center gap-2 px-6 py-3 bg-green-600 text-white font-medium rounded-xl
+                    hover:bg-green-500 transition-all duration-300 shadow-lg shadow-green-600/20
+                    hover:shadow-green-500/30 hover:-translate-y-0.5 mt-6 w-full sm:w-auto justify-center">
+            <span class="iconify" data-icon="lucide:message-circle" data-width="20"></span>
+            Chat on WhatsApp
+          </a>
+
+          <!-- Social Links -->
+          <div class="flex items-center gap-3 mt-6">
+            <a href="#" class="w-11 h-11 rounded-lg bg-dark-700/50 border border-dark-500/50 flex items-center
+                       justify-center text-slate-400 hover:text-primary-400 hover:border-primary-600/30
+                       transition-all duration-300 hover:-translate-y-0.5">
+              <span class="iconify" data-icon="lucide:facebook" data-width="18"></span>
+            </a>
+            <a href="#" class="w-11 h-11 rounded-lg bg-dark-700/50 border border-dark-500/50 flex items-center
+                       justify-center text-slate-400 hover:text-primary-400 hover:border-primary-600/30
+                       transition-all duration-300 hover:-translate-y-0.5">
+              <span class="iconify" data-icon="lucide:instagram" data-width="18"></span>
+            </a>
+            <a href="#" class="w-11 h-11 rounded-lg bg-dark-700/50 border border-dark-500/50 flex items-center
+                       justify-center text-slate-400 hover:text-primary-400 hover:border-primary-600/30
+                       transition-all duration-300 hover:-translate-y-0.5">
+              <span class="iconify" data-icon="lucide:github" data-width="18"></span>
+            </a>
+            <a href="#" class="w-11 h-11 rounded-lg bg-dark-700/50 border border-dark-500/50 flex items-center
+                       justify-center text-slate-400 hover:text-primary-400 hover:border-primary-600/30
+                       transition-all duration-300 hover:-translate-y-0.5">
+              <span class="iconify" data-icon="lucide:linkedin" data-width="18"></span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="lg:col-span-3 fade-up">
+          <form id="contactForm" class="bg-dark-700/30 border border-dark-500/50 rounded-2xl p-7 sm:p-8">
+            <div class="grid sm:grid-cols-2 gap-5 mb-5">
+              <div>
+                <label for="name" class="block text-sm font-medium text-slate-300 mb-2">Your Name</label>
+                <input type="text" id="name" name="name" placeholder="John Doe" required
+                       class="w-full px-4 py-3 bg-dark-800/50 border border-dark-500/50 rounded-xl text-white
+                              placeholder-slate-500 text-sm focus:outline-none focus:border-primary-500/50
+                              focus:ring-1 focus:ring-primary-500/20 transition-all duration-300">
+              </div>
+              <div>
+                <label for="email" class="block text-sm font-medium text-slate-300 mb-2">Your Email</label>
+                <input type="email" id="email" name="email" placeholder="john@example.com" required
+                       class="w-full px-4 py-3 bg-dark-800/50 border border-dark-500/50 rounded-xl text-white
+                              placeholder-slate-500 text-sm focus:outline-none focus:border-primary-500/50
+                              focus:ring-1 focus:ring-primary-500/20 transition-all duration-300">
+              </div>
+            </div>
+            <div class="mb-5">
+              <label for="message" class="block text-sm font-medium text-slate-300 mb-2">Your Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required
+                        class="w-full px-4 py-3 bg-dark-800/50 border border-dark-500/50 rounded-xl text-white
+                               placeholder-slate-500 text-sm focus:outline-none focus:border-primary-500/50
+                               focus:ring-1 focus:ring-primary-500/20 transition-all duration-300 resize-none"></textarea>
+            </div>
+            <button type="submit" id="submitBtn"
+                    class="group w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4
+                           bg-primary-600 text-white font-semibold rounded-xl hover:bg-primary-500
+                           transition-all duration-300 shadow-lg shadow-primary-600/25 hover:shadow-primary-500/35
+                           hover:-translate-y-0.5">
+              <span class="iconify" data-icon="lucide:send" data-width="18"></span>
+              Send Message
+              <span class="iconify group-hover:translate-x-1 transition-transform duration-300"
+                    data-icon="lucide:arrow-right" data-width="18"></span>
+            </button>
+            <!-- Success Message -->
+            <div id="formSuccess" class="hidden mt-4 p-4 bg-green-600/10 border border-green-600/20 rounded-xl">
+              <p class="text-green-400 text-sm font-medium flex items-center gap-2">
+                <span class="iconify" data-icon="lucide:check-circle" data-width="18"></span>
+                Message sent successfully! I'll get back to you soon.
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="bg-dark-850 border-t border-dark-500/30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid md:grid-cols-3 gap-8 items-center">
+        <!-- Logo & Copyright -->
+        <div>
+          <a href="#home" class="flex items-center gap-2 mb-4">
+            <div class="w-9 h-9 rounded-lg bg-primary-600 flex items-center justify-center font-bold text-white text-sm
+                        shadow-lg shadow-primary-600/20">RG</div>
+            <span class="text-white font-semibold">Portfolio</span>
+          </a>
+          <p class="text-slate-500 text-sm">&copy; 2025 RG Portfolio. All rights reserved.</p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="flex items-center justify-center gap-6">
+          <a href="#about" class="text-slate-400 text-sm hover:text-primary-400 transition-colors">About</a>
+          <a href="#projects" class="text-slate-400 text-sm hover:text-primary-400 transition-colors">Projects</a>
+          <a href="#services" class="text-slate-400 text-sm hover:text-primary-400 transition-colors">Services</a>
+          <a href="#contact" class="text-slate-400 text-sm hover:text-primary-400 transition-colors">Contact</a>
+        </div>
+
+        <!-- Social Icons -->
+        <div class="flex items-center justify-end gap-3">
+          <a href="#" class="w-9 h-9 rounded-lg bg-dark-700/50 flex items-center justify-center text-slate-500
+                     hover:text-primary-400 hover:bg-dark-600/50 transition-all duration-300">
+            <span class="iconify" data-icon="lucide:facebook" data-width="16"></span>
+          </a>
+          <a href="#" class="w-9 h-9 rounded-lg bg-dark-700/50 flex items-center justify-center text-slate-500
+                     hover:text-primary-400 hover:bg-dark-600/50 transition-all duration-300">
+            <span class="iconify" data-icon="lucide:instagram" data-width="16"></span>
+          </a>
+          <a href="#" class="w-9 h-9 rounded-lg bg-dark-700/50 flex items-center justify-center text-slate-500
+                     hover:text-primary-400 hover:bg-dark-600/50 transition-all duration-300">
+            <span class="iconify" data-icon="lucide:github" data-width="16"></span>
+          </a>
+          <a href="#" class="w-9 h-9 rounded-lg bg-dark-700/50 flex items-center justify-center text-slate-500
+                     hover:text-primary-400 hover:bg-dark-600/50 transition-all duration-300">
+            <span class="iconify" data-icon="lucide:linkedin" data-width="16"></span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Made By -->
+      <div class="mt-8 pt-6 border-t border-dark-500/30 text-center">
+        <p class="text-slate-500 text-sm">
+          Made with <span class="text-red-400">&hearts;</span> by <span class="text-primary-400 font-medium">SayuRanga</span>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ BACK TO TOP BUTTON ============ -->
+  <button id="backToTop"
+          class="fixed bottom-6 right-6 w-12 h-12 bg-primary-600 text-white rounded-xl shadow-xl shadow-primary-600/25
+                 flex items-center justify-center opacity-0 invisible translate-y-4
+                 transition-all duration-300 hover:bg-primary-500 hover:-translate-y-1 z-50">
+    <span class="iconify" data-icon="lucide:chevron-up" data-width="22"></span>
+  </button>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>

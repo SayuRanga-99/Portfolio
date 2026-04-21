@@ -1,0 +1,262 @@
+/* ============================================
+   RG Portfolio - Custom Styles
+   ============================================ */
+
+/* --- Scrollbar --- */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0f1c;
+}
+::-webkit-scrollbar-thumb {
+  background: #253349;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* --- Selection --- */
+::selection {
+  background: rgba(59, 130, 246, 0.3);
+  color: #fff;
+}
+
+/* --- Smooth Scroll (fallback) --- */
+html {
+  scroll-behavior: smooth;
+}
+
+/* --- Navigation Links --- */
+.nav-link {
+  position: relative;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #94a3b8;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+.nav-link:hover {
+  color: #fff;
+  background: rgba(59, 130, 246, 0.05);
+}
+.nav-link.active {
+  color: #60a5fa;
+}
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 2px;
+  background: linear-gradient(to right, #2563eb, #60a5fa);
+  border-radius: 1px;
+}
+
+/* --- Mobile Nav Links --- */
+.mobile-nav-link {
+  display: block;
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #94a3b8;
+  border-radius: 0.75rem;
+  transition: all 0.3s ease;
+}
+.mobile-nav-link:hover,
+.mobile-nav-link.active {
+  color: #60a5fa;
+  background: rgba(59, 130, 246, 0.05);
+}
+
+/* --- Navbar Scrolled State --- */
+.navbar-scrolled {
+  background: rgba(10, 15, 28, 0.85) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border-bottom: 1px solid rgba(37, 51, 73, 0.5) !important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* --- Progress Bars --- */
+.progress-bar-container {
+  width: 100%;
+  height: 6px;
+  background: rgba(37, 51, 73, 0.6);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.progress-bar {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(to right, #2563eb, #60a5fa);
+  border-radius: 3px;
+  transition: width 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+}
+.progress-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* --- Filter Buttons --- */
+.filter-btn {
+  padding: 0.5rem 1.25rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #94a3b8;
+  background: rgba(26, 35, 50, 0.5);
+  border: 1px solid rgba(37, 51, 73, 0.5);
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+}
+.filter-btn:hover {
+  color: #fff;
+  border-color: rgba(59, 130, 246, 0.3);
+  background: rgba(59, 130, 246, 0.05);
+}
+.filter-btn.active {
+  color: #fff;
+  background: rgba(59, 130, 246, 0.15);
+  border-color: rgba(59, 130, 246, 0.4);
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.1);
+}
+
+/* --- Gallery Items --- */
+.gallery-item {
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.gallery-item.hidden-item {
+  opacity: 0;
+  transform: scale(0.8);
+  position: absolute;
+  pointer-events: none;
+}
+.gallery-item.visible-item {
+  opacity: 1;
+  transform: scale(1);
+  position: relative;
+  pointer-events: auto;
+}
+.gallery-card {
+  border: 1px solid rgba(37, 51, 73, 0.5);
+  transition: border-color 0.3s ease;
+}
+.gallery-card:hover {
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+/* --- Fade Up Animation --- */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered delays for children */
+.fade-up:nth-child(1) { transition-delay: 0ms; }
+.fade-up:nth-child(2) { transition-delay: 80ms; }
+.fade-up:nth-child(3) { transition-delay: 160ms; }
+.fade-up:nth-child(4) { transition-delay: 240ms; }
+.fade-up:nth-child(5) { transition-delay: 320ms; }
+.fade-up:nth-child(6) { transition-delay: 400ms; }
+.fade-up:nth-child(7) { transition-delay: 480ms; }
+.fade-up:nth-child(8) { transition-delay: 560ms; }
+
+/* --- Float Animations --- */
+@keyframes float-1 {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+@keyframes float-2 {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+@keyframes float-3 {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+.float-animation-1 {
+  animation: float-1 3s ease-in-out infinite;
+}
+.float-animation-2 {
+  animation: float-2 3.5s ease-in-out infinite 0.5s;
+}
+.float-animation-3 {
+  animation: float-3 4s ease-in-out infinite 1s;
+}
+
+/* --- Pulse Slow (for hero glow) --- */
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.2; transform: scale(1.1); }
+  50% { opacity: 0.3; transform: scale(1.15); }
+}
+.animate-pulse-slow {
+  animation: pulse-slow 4s ease-in-out infinite;
+}
+
+/* --- Form Focus Ring Glow --- */
+input:focus,
+textarea:focus {
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.08);
+}
+
+/* --- Back to Top Visible State --- */
+.back-to-top-visible {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateY(0) !important;
+}
+
+/* --- Loading Animation for Submit Button --- */
+@keyframes btn-loading {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.btn-loading .iconify {
+  animation: btn-loading 1s linear infinite;
+}
+
+/* --- Mobile Menu Animation --- */
+.mobile-menu-enter {
+  animation: slideDown 0.3s ease-out;
+}
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- Responsive Tweaks --- */
+@media (max-width: 640px) {
+  .nav-link {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.5rem;
+  }
+}
